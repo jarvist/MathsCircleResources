@@ -1,0 +1,54 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{tikz}
+
+\begin{document}
+
+\centering
+\begin{tikzpicture}[remember picture, overlay]
+    % Define the page dimensions
+    \def\pagewidth{\paperwidth-2cm}
+    \def\pageheight{\paperheight-3cm}
+    
+    % Calculate half the page height for the drawing box
+    \pgfmathsetmacro{\halfheight}{0.5 * \pageheight}
+    
+    % Drawing box (top half of the page)
+    \draw [line width=2pt] 
+        (current page.north west) ++ (1cm,-1cm) rectangle 
+        ++({\textwidth},-0.5*\halfheight);
+    
+    % Writing lines (bottom half of the page)
+    \foreach \y in {0,1,...,9} {
+        \draw [line width=0.5pt] 
+            ([shift={(1cm,-\halfheight-1cm-\y*1.5cm)}]current page.north west) -- 
+            ++({\textwidth},0);
+    }
+\end{tikzpicture}
+
+% To add more pages, use:
+\newpage
+% <copy and paste the entire tikzpicture environment here>
+\begin{tikzpicture}[remember picture, overlay]
+    % Define the page dimensions
+    \def\pagewidth{\paperwidth-2cm}
+    \def\pageheight{\paperheight-2cm}
+    
+    % Calculate half the page height for the drawing box
+    \pgfmathsetmacro{\halfheight}{0.5 * \pageheight}
+    
+    % Drawing box (top half of the page)
+    \draw [line width=2pt] 
+        (current page.north west) ++ (1cm,-1cm) rectangle 
+        ++({\pagewidth},-\halfheight);
+    
+    % Writing lines (bottom half of the page)
+    \foreach \y in {0,1,...,9} {
+        \draw [line width=0.5pt] 
+            ([shift={(1cm,-\halfheight-1cm-\y*1.5cm)}]current page.north west) -- 
+            ++({\pagewidth},0);
+    }
+\end{tikzpicture}
+
+
+\end{document}
