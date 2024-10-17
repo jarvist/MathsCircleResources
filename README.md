@@ -11,4 +11,6 @@ Other activities are taken from the following two books.
 
 > Rozhkovskaya, N., 2014. Math circles for elementary school students, MSRI mathematical circles library. MSRI Mathematical Sciences Research Institute, Berkeley, California : Providence. Rhode Island : American Mathematical Society.
 
+## See also
 
+https://nrich.maths.org/printable-resources - dotted paper, dominoes etc.
