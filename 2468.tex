@@ -1,0 +1,60 @@
+% TikZ via Claude Sonnet:
+% "Please make a LaTeX / TikZ artefact, printed on A4, with large bold playing cards containing the text: 2, 4, 6, 8, +, -, =."
+%
+% https://nrich.maths.org/problems/2-4-6-8
+
+
+
+\documentclass[a4paper]{article}
+\usepackage{tikz}
+\usepackage[margin=1cm]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+
+
+\begin{document}
+
+% Define the card style
+\tikzset{
+    card/.style={
+        draw=black,
+        thick,
+        rounded corners=0.5cm,
+        minimum width=4cm,
+        minimum height=6cm,
+        fill=white,
+
+         font=\fontfamily{ppl}\fontsize{600}{720}\selectfont
+    }
+}
+
+\begin{tikzpicture}[node distance=4.5cm]
+
+
+% First row of cards
+\node[card] (card1) at (0,0) {\fontsize{80}{96}\selectfont\textbf{2}};
+\node[card] (card2) at (4.5,0) {\fontsize{80}{96}\selectfont\textbf{4}};
+\node[card] (card3) at (9,0) {\fontsize{80}{96}\selectfont\textbf{6}};
+\node[card] (card7) at (13.5,0) {\fontsize{80}{96}\selectfont\textbf{$=$}};
+
+% Second row of cards
+\node[card] (card4) at (0,-6.5) {\fontsize{80}{96}\selectfont\textbf{8}};
+\node[card] (card5) at (4.5,-6.5) {\fontsize{80}{96}\selectfont\textbf{$+$}};
+\node[card] (card6) at (9,-6.5) {\fontsize{80}{96}\selectfont\textbf{$-$}};
+
+% Third row
+% First row of cards
+\node[card] (card1) at (0,-13) {\fontsize{80}{96}\selectfont\textbf{2}};
+\node[card] (card2) at (4.5,-13) {\fontsize{80}{96}\selectfont\textbf{4}};
+\node[card] (card3) at (9,-13) {\fontsize{80}{96}\selectfont\textbf{6}};
+\node[card] (card7) at (13.5,-13) {\fontsize{80}{96}\selectfont\textbf{$=$}};
+
+% Second row of cards
+\node[card] (card4) at (0,-19.5) {\fontsize{80}{96}\selectfont\textbf{8}};
+\node[card] (card5) at (4.5,-19.5) {\fontsize{80}{96}\selectfont\textbf{$+$}};
+\node[card] (card6) at (9,-19.5) {\fontsize{80}{96}\selectfont\textbf{$-$}};
+
+\end{tikzpicture}
+
+\end{document}
